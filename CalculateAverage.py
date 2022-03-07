@@ -17,21 +17,27 @@ def determine_grade(grade):
     return letter_grade
 
 
+def my_random(grade):
+    import random
+    grade = random.randint(1, 100)
+    return grade
+
+
 def calc_average():
-    total = 0
     count = 1
-    grade1 = float(input("Enter score:"))
-    grade2 = float(input("Enter score:"))
-    grade3 = float(input("Enter score:"))
-    grade4 = float(input("Enter score:"))
-    grade5 = float(input("Enter score:"))
-    print("Score\tNumeric Grade\tLetter Grade")
-    print("__________________________________")
+    grade = 0
+    grade1 = my_random(grade)
+    grade2 = my_random(grade)
+    grade3 = my_random(grade)
+    grade4 = my_random(grade)
+    grade5 = my_random(grade)
     letters1 = determine_grade(grade1)
     letters2 = determine_grade(grade2)
     letters3 = determine_grade(grade3)
     letters4 = determine_grade(grade4)
     letters5 = determine_grade(grade5)
+    print("Score\tNumeric Grade\tLetter Grade")
+    print("__________________________________")
     print("Score", count, ":\t", grade1, "\t\t", letters1)
     count = count + 1
     print("Score", count, ":\t", grade2, "\t\t", letters2)
