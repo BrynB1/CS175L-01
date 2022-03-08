@@ -1,3 +1,7 @@
+# CS175L-01
+# Bryn Bijur
+# calc_average
+
 def main():
     calc_average()
     repeat()
