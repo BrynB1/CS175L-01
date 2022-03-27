@@ -1,32 +1,29 @@
 # CS175L-01
 # Bryn Bijur
 # AverageFromInput.py
+import sys
+
+
 def main():
-    # Open a file named philosophers.txt.
-    infile = open('numbers.txt', 'r')
-
-    # Read three lines from the file
-    line1 = float(infile.readline())
-    line2 = float(infile.readline())
-    line3 = float(infile.readline())
-
-    # Close the file.
-    infile.close()
-
-    # Print the data that was read into
-    # memory.
-    count = 1
-    total = 0
-    total += line1
-    print("I read in", count, "number(s) Current number is:", line1, "Total is:", total)
-    count += 1
-    total += line2
-    print("I read in", count, "number(s) Current number is:", line2, "Total is:", total)
-    count += 1
-    total += line3
-    print("I read in", count, "number(s) Current number is:", line3, "Total is:", total)
-    average = total / count
-    print("Average:", average)
+    try:
+        total = 0
+        count = 0
+        file = open("numbers.txt", "r")
+        for line in file:
+            lines = float(line)
+            total += lines
+            count += 1
+            print("I read in", count, "number(s) Current number is:", lines, "Total is:", total)
+        average = total / count
+        print("Average:", average)
+    except IOError:
+        print('An error occurred trying to open the file.')
+        sys.exit()
+    except ValueError:
+        print('Non-numeric data found in the file.Skipping..')
+        average = total / count
+        print("Average:", average)
+        sys.exit()
 
 
 # Call the main function.
